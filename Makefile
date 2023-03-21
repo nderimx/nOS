@@ -9,9 +9,8 @@ BUILD_DIR = build
 image: $(BUILD_DIR)/nos.img
 
 $(BUILD_DIR)/nos.img: bootloader kernel
-	cat $(BUILD_DIR)/bootloader.bin $(BUILD_DIR)/kernel.bin > $(BUILD_DIR)/nos.bin
-	dd if=/dev/zero of=$(BUILD_DIR)/nos.img bs=512 count=2880 >/dev/null
-	dd if=$(BUILD_DIR)/nos.bin of=$(BUILD_DIR)/nos.img conv=notrunc >/dev/null
+	cat $(BUILD_DIR)/bootloader.bin $(BUILD_DIR)/kernel.bin > $(BUILD_DIR)/nos.img
+	truncate -s 1440K $(BUILD_DIR)/nos.img
 
 # Bootloader
 bootloader: $(BUILD_DIR)/bootloader.bin
