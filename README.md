@@ -18,7 +18,15 @@ Steps to making it:
 
 `docker run --rm -it -v $(pwd):/root/env nos-buildenv`
 or
-`docker run --rm -v $(pwd):/root/env -w /root/env nos-buildenv make`
+`docker run --cpus="15" -m 10g --rm -v $(pwd):/root/env -w /root/env nos-buildenv make`
 
 `qemu-system-x86_64 -drive format=raw,file=build/nos.img -display curses`
 To exit qemu: ALT-2 then type `quit`
+
+### Instruction for the Makefile
+1. build kernel
+  1. assemble kernel_start.asm
+  2. compile kernel.cpp
+  3. link them
+2. assemble bootloader
+3. concatenate bootloader with kernel and truncate the result
