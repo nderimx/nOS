@@ -17,7 +17,7 @@ RUN apt install -y curl
 
 ARG PREFIX="/usr/local/i386elfgcc"
 ARG TARGET=i386-elf
-RUN echo 'export PATH="$PREFIX/bin:$PATH"' >> $HOME/.bashrc
+RUN echo export PATH="$PREFIX/bin:\$PATH" >> $HOME/.bashrc
 
 RUN mkdir /tmp/src
 RUN cd /tmp/src

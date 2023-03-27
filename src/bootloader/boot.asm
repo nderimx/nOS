@@ -11,7 +11,6 @@ xor ax, ax
 mov es, ax
 mov ds, ax
 mov ss, ax
-mov sp, 0x7c00
 mov bp, 0x8000
 mov sp, bp
 sti
