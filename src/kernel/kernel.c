@@ -13,8 +13,8 @@ void backUpPrinter() {
     videomemory = videomemorystart;
     return;
 }
-extern "C" void main() {
-    char* message = "Welcome to the C++ Kernel.";
+extern void main() {
+    char* message = "Welcome to the C Kernel.";
     print(message);
     print("This should come next.");
     return;

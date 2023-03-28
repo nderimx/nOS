@@ -12,7 +12,8 @@ Steps to making it:
 3. Create makefile that builds the PoC into image (tag: 0.0.0)
 4. From the Bootloader, load the kernel into memory and jump there
 5. Bootloader transitions to protected mode before jumping to kernel
-6. Change kernel from assembly to C program (tag: 0.1.0)
+6. Change kernel from assembly to C program
+7. IDt
 
 `docker build -t nos-buildenv .`
 

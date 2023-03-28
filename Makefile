@@ -1,5 +1,5 @@
 ASM = nasm
-CPP = i386-elf-gcc
+C = i386-elf-gcc
 LD	= i386-elf-ld
 
 KERNEL_LOCATION = 0x7e00
@@ -27,7 +27,7 @@ kernel: $(BUILD_DIR)/kernel.bin
 
 $(BUILD_DIR)/kernel.bin: always
 	$(ASM) $(SRC_DIR)/kernel/kernel_start.asm -f elf -o $(BUILD_DIR)/kernel_start.o
-	$(CPP) -ffreestanding -m32 -g -c $(SRC_DIR)/kernel/kernel.cpp -o $(BUILD_DIR)/kernel.o
+	$(C) -ffreestanding -m32 -g -c $(SRC_DIR)/kernel/kernel.c -o $(BUILD_DIR)/kernel.o
 	$(LD) -o $(BUILD_DIR)/kernel.bin -Ttext $(KERNEL_LOCATION) --entry main $(BUILD_DIR)/kernel_start.o $(BUILD_DIR)/kernel.o --oformat binary
 
 # Always
