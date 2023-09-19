@@ -15,6 +15,20 @@ Steps to making it:
 6. Change kernel from assembly to C program
 7. IDt
 
+
+
+### Some Goals
+#### Make All Standard Iterrupt Service Routines
+#### Create "USERLAND"
+#### Make POSIX conforming sytem calls
+#### make a shell with standardized std:in & std:err
+#### Testing
+- Build Infrastructure to Run Unit & Integration Tests in intended ISA from Qemu (in a regular OS such as debian)
+- Link emulated OS std:in/std:err with hosts std:in/std:err, to streamline testing
+- Run Systems Tests from Qemu
+#### GUI
+
+
 `docker build -t nos-buildenv .`
 
 `docker run --rm -it -v $(pwd):/root/env nos-buildenv`

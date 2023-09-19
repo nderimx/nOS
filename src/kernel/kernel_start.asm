@@ -4,4 +4,4 @@
 call main
 
 ; ~halt
-jmp $
+jmp $ 
